@@ -1662,7 +1662,7 @@ cpdefine("inline:com-chilipeppr-widget-xyz", ["chilipeppr_ready", "jquerycookie"
             // Homes all axes present in command. At least one axis letter must be present. The value (number) must be provided but is ignored.
             // The homing sequence is fixed and always starts with the Z axis (if requested). The sequence runs ZXYA (but skipping all axes that are not specified in the G28.2 command)
             console.log("homeAxis. evt.data:", evt.data, "evt:", evt);
-            this.homePLC();
+            
             var cmd = "G28.2 Z0";
             this.publishSend(cmd);
              var cmd = "G28.2 Y0";
@@ -1672,7 +1672,7 @@ cpdefine("inline:com-chilipeppr-widget-xyz", ["chilipeppr_ready", "jquerycookie"
              var cmd = "G28.2 X0";
             this.publishSend(cmd);
             chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send /dev/ttyUSB1  G28.2 X0");			
-
+this.homePLC();
             
             /*
             if (evt.data == "xyz") {
