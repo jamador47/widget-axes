@@ -406,9 +406,9 @@ cprequire_test(["inline:com-chilipeppr-widget-xyz"], function (xyz) {
 cpdefine("inline:com-chilipeppr-widget-xyz", ["chilipeppr_ready", "jquerycookie"], function () {
     return {
         id: "com-chilipeppr-widget-xyz",
-        url: "http://raw.githubusercontent.com/jamador47/widget-axes/master/auto-generated-widget.html",       // The final URL of the working widget as a single HTML file with CSS and Javascript inlined. You can let runme.js auto fill this if you are using Cloud9.
+        url: "http://raw.githubusercontent.com/jeruick/widget-axes/master/auto-generated-widget.html",       // The final URL of the working widget as a single HTML file with CSS and Javascript inlined. You can let runme.js auto fill this if you are using Cloud9.
         fiddleurl: "http://ide.c9.io/eaclaya/axes-widget", // The edit URL. This can be auto-filled by runme.js in Cloud9 if you'd like, or just define it on your own to help people know where they can edit/fork your widget
-        githuburl: "http://github.com/jamador47/widget-axes", // The backing github repo
+        githuburl: "http://github.com/jeruick/widget-axes", // The backing github repo
         testurl: "http://axes-widget-eaclaya.c9users.io/widget.html",   // The standalone working widget so can view it working by itself
         name: "Widget / XYZ Axes v2",
         desc: "The Axes widget shows the XYZA values of the axes of your CNC controller. It also enables you to jog, home, change units, and change Work Coordinate Systems.",
@@ -1662,7 +1662,7 @@ cpdefine("inline:com-chilipeppr-widget-xyz", ["chilipeppr_ready", "jquerycookie"
             // Homes all axes present in command. At least one axis letter must be present. The value (number) must be provided but is ignored.
             // The homing sequence is fixed and always starts with the Z axis (if requested). The sequence runs ZXYA (but skipping all axes that are not specified in the G28.2 command)
             console.log("homeAxis. evt.data:", evt.data, "evt:", evt);
-            
+            this.homePLC();
             var cmd = "G28.2 ";
             if (evt.data == "xyz") {
                 cmd += "X0 Y0 Z0";
@@ -1676,8 +1676,6 @@ cpdefine("inline:com-chilipeppr-widget-xyz", ["chilipeppr_ready", "jquerycookie"
             console.log(cmd);
             //chilipeppr.publish("/com-chilipeppr-widget-serialport/send", cmd);
             this.publishSend(cmd);
-            
-            this.homePLC();
 
         },
         homePLC: function(evt){
