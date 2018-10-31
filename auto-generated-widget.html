@@ -1671,7 +1671,8 @@ cpdefine("inline:com-chilipeppr-widget-xyz", ["chilipeppr_ready", "jquerycookie"
             this.publishSend(cmd);
              var cmd = "G28.2 X0";
             this.publishSend(cmd);
-            
+            chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send /dev/ttyUSB1  G28.2 X0");			
+
             
             /*
             if (evt.data == "xyz") {
