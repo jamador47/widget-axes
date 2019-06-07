@@ -238,6 +238,8 @@
     </style>
 
     <script type='text/javascript'>
+     const serialPort = "/dev/ttyUSB0";
+        const serialPort2 = "/dev/ttyACM0";
     //<![CDATA[
 /* global cprequire_test macro chilipeppr THREE $ requirejs cprequire cpdefine chilipeppr */
 // Test this element. This code is auto-removed by the chilipeppr.load()
@@ -1849,19 +1851,17 @@ client.get(theurl, function (response) {
         }, 2000);
 
             setTimeout(function () {
-            chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send /dev/ttyUSB1  G28.2 X0");	}, 4000);
+            chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send /dev/ttyUSB1  G28.2 X0");	
+            }, 4000);
 
 
             setTimeout(function () {
-            var cmd = "G28.2 Z0";
-            this.publishSend(cmd);
-             var cmd = "G28.2 Y0";
-            this.publishSend(cmd);
-             var cmd = "G28.2 A0";
-            this.publishSend(cmd);
-             var cmd = "G28.2 X0";
-            this.publishSend(cmd);
-            this.homePLC();
+
+                chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send /dev/ttyUSB0  G28.2 Z0");	
+                chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send /dev/ttyUSB0  G28.2 Y0");	
+                chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send /dev/ttyUSB0  G28.2 A0");	
+                chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send /dev/ttyUSB0  G28.2 X0");	
+                this.homePLC();
               }, 5000);
             		
 
