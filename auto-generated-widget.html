@@ -1862,8 +1862,25 @@ client.get(theurl, function (response) {
                 chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send /dev/ttyUSB0  G28.2 A0");	
                 chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send /dev/ttyUSB0  G28.2 X0");	
                 this.homePLC();
+                var HttpClient = function () {
+           this.get = function (aUrl, aCallback) {
+  var anHttpRequest = new XMLHttpRequest();
+  anHttpRequest.onreadystatechange = function () {
+  if (anHttpRequest.readyState == 4 && anHttpRequest.status == 200)
+  aCallback(anHttpRequest.responseText);
+  }
+  anHttpRequest.open("GET", aUrl, true);
+  anHttpRequest.send(null);
+  }
+  }
+  var theurl = 'http://localhost:8000/rotarcar/1';
+  var client = new HttpClient();
+  client.get(theurl, function (response) {
+  
+  });
               }, 5000);
             		
+
 
             
             /*
