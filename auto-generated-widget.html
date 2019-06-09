@@ -1876,7 +1876,59 @@ client.get(theurl, function (response) {
   var theurl = 'http://192.168.0.98/rotarcar/1';
   var client = new HttpClient();
   client.get(theurl, function (response) {
-  
+    setTimeout(function () {
+        setTimeout(function () {
+        var serialPort = "/dev/ttyUSB0";
+             var cmd  = "$homy";
+   chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send " + serialPort + " " + cmd);
+
+   setTimeout(function () {
+        var serialPort = "/dev/ttyUSB0";
+             var cmd  = "$homy";
+   chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send " + serialPort + " " + cmd);
+   setTimeout(function () {
+        var serialPort = "/dev/ttyUSB0";
+             var cmd  = "$homy";
+   chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send " + serialPort + " " + cmd);
+   setTimeout(function () {
+        var serialPort = "/dev/ttyUSB0";
+             var cmd  = "$homy";
+   chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send " + serialPort + " " + cmd);
+   setTimeout(function () {
+        var serialPort = "/dev/ttyUSB0";
+             var cmd  = "$homy";
+   chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send " + serialPort + " " + cmd);
+   setTimeout(function () {
+        var serialPort = "/dev/ttyUSB0";
+             var cmd  = "$homy";
+   chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send " + serialPort + " " + cmd);
+
+   setTimeout(function () {
+        var serialPort = "/dev/ttyUSB0";
+             var cmd  = "$homy";
+   chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send " + serialPort + " " + cmd);
+
+   setTimeout(function () {
+        var serialPort = "/dev/ttyUSB0";
+             var cmd  = "$homy";
+   chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send " + serialPort + " " + cmd);
+
+
+    }, 2000);
+    }, 2000);
+    }, 2000);
+
+    }, 2000);
+
+    }, 2000);
+
+    }, 2000);
+
+    }, 2000);
+    }, 2000);
+
+        
+    }, 8000);
   });
               }, 5000);
             		
