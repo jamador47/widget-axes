@@ -1847,12 +1847,15 @@ client.get(theurl, function (response) {
            
             this.onM20BtnClick();
             setTimeout(function () {
+                chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send /dev/ttyUSB1  G91 G0 Y20");	
+                chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send /dev/ttyUSB1  G91 G0 A20");	
+
             this.onM10BtnClick();
-        }, 2000);
+        }, 3000);
 
             setTimeout(function () {
             chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send /dev/ttyUSB1  G28.2 X0");	
-            }, 4000);
+            }, 5000);
 
 
             setTimeout(function () {
@@ -1930,7 +1933,7 @@ client.get(theurl, function (response) {
         
     }, 8000);
   });
-              }, 5000);
+              }, 8000);
             		
 
 
