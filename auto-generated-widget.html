@@ -1847,8 +1847,8 @@ client.get(theurl, function (response) {
            
             this.onM20BtnClick();
             setTimeout(function () {
-                chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send /dev/ttyUSB0  G91 G0 Y50");	
-                chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send /dev/ttyUSB0  G91 G0 A50");	
+                chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send /dev/ttyUSB0  G91 G1 Y50");	
+                chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send /dev/ttyUSB0  G91 G1 A50");	
 
             this.onM10BtnClick();
         }, 3000);
