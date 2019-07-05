@@ -1845,11 +1845,12 @@ client.get(theurl, function (response) {
             // The homing sequence is fixed and always starts with the Z axis (if requested). The sequence runs ZXYA (but skipping all axes that are not specified in the G28.2 command)
             console.log("homeAxis. evt.data:", evt.data, "evt:", evt);
            
-            this.onM20BtnClick();
+             chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send /dev/ttyUSB0  G28.2 Z0");	
+                   this.onM20BtnClick();
+          
             setTimeout(function () {
                 chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send /dev/ttyUSB0  G91 G1 Y50");	
-                chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send /dev/ttyUSB0  G91 G1 A50");	
-
+                chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send /dev/ttyUSB0  G91 G1 A50");  
             this.onM10BtnClick();
         }, 3000);
 
@@ -1860,7 +1861,7 @@ client.get(theurl, function (response) {
 
             setTimeout(function () {
 
-                chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send /dev/ttyUSB0  G28.2 Z0");	
+               
                 chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send /dev/ttyUSB0  G28.2 Y0");	
                 chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send /dev/ttyUSB0  G28.2 A0");	
                 chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send /dev/ttyUSB0  G28.2 X0");	
@@ -1879,64 +1880,44 @@ client.get(theurl, function (response) {
   var theurl = 'http://192.168.0.98/rotarcar/1';
   var client = new HttpClient();
   client.get(theurl, function (response) {
-    setTimeout(function () {
-        setTimeout(function () {
-        var serialPort = "/dev/ttyUSB0";
-             var cmd  = "$homy";
-   chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send " + serialPort + " " + cmd);
-
-   setTimeout(function () {
-        var serialPort = "/dev/ttyUSB0";
-             var cmd  = "$homy";
-   chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send " + serialPort + " " + cmd);
-   setTimeout(function () {
-        var serialPort = "/dev/ttyUSB0";
-             var cmd  = "$homy";
-   chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send " + serialPort + " " + cmd);
-   setTimeout(function () {
-        var serialPort = "/dev/ttyUSB0";
-             var cmd  = "$homy";
-   chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send " + serialPort + " " + cmd);
-   setTimeout(function () {
-        var serialPort = "/dev/ttyUSB0";
-             var cmd  = "$homy";
-   chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send " + serialPort + " " + cmd);
-   setTimeout(function () {
-        var serialPort = "/dev/ttyUSB0";
-             var cmd  = "$homy";
-   chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send " + serialPort + " " + cmd);
-
-   setTimeout(function () {
-        var serialPort = "/dev/ttyUSB0";
-             var cmd  = "$homy";
-   chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send " + serialPort + " " + cmd);
-
-   setTimeout(function () {
-        var serialPort = "/dev/ttyUSB0";
-             var cmd  = "$homy";
-   chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send " + serialPort + " " + cmd);
-
-
-    }, 2000);
-    }, 2000);
-    }, 2000);
-
-    }, 2000);
-
-    }, 2000);
-
-    }, 2000);
-
-    }, 2000);
-    }, 2000);
-
-        
-    }, 8000);
+   
   });
-              }, 8000);
+              
+            var cmd  = "$homy";
+   chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send " + serialPort + " " + cmd);
+            
+            
+            }, 8000);
             		
 
-
+setTimeout(function(){
+           var cmd  = "$homy";
+   chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send " + serialPort + " " + cmd);
+},15000)
+            
+            setTimeout(function(){
+           var cmd  = "$homy";
+   chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send " + serialPort + " " + cmd);
+},24000)
+            
+            setTimeout(function(){
+           var cmd  = "$homy";
+   chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send " + serialPort + " " + cmd);
+},35000)
+            
+            setTimeout(function(){
+           var cmd  = "$homy";
+   chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send " + serialPort + " " + cmd);
+},45000)
+            
+                      setTimeout(function(){
+           var cmd  = "$homy";
+   chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send " + serialPort + " " + cmd);
+},60000)
+            setTimeout(function(){
+           var cmd  = "$homy";
+   chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send " + serialPort + " " + cmd);
+},75000)
             
             /*
             if (evt.data == "xyz") {
