@@ -1854,16 +1854,16 @@ client.get(theurl, function (response) {
 
         setTimeout(function () {
             chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send /dev/ttyUSB0  G91 G0 Y100");	
-        }, 4000);
+        }, 7000);
 
         setTimeout(function () {
             chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send /dev/ttyUSB0  G91 G0 A100");  
 
-        }, 5000);
+        }, 9000);
             setTimeout(function () {
             chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send /dev/ttyUSB1  G28.2 X0");	
             
-            }, 6000);
+            }, 11000);
 
 
             setTimeout(function () {
@@ -1895,7 +1895,7 @@ client.get(theurl, function (response) {
    chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send " + serialPort + " " + cmd);
             
             
-            }, 8000);
+            }, 13000);
             		
 
 setTimeout(function(){
@@ -2627,7 +2627,7 @@ setTimeout(function(){
                         </ul>
                     </div>
                 </div>
-            </div> <span class="panel-title" data-toggle="popover">Axes <span style="font-size:9px">v11.0</span></span>
+            </div> <span class="panel-title" data-toggle="popover">Axes <span style="font-size:9px">v12.0</span></span>
 
         </div>
         <div id="com-chilipeppr-widget-xyz-body" class="panel-body">
