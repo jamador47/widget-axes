@@ -1853,13 +1853,10 @@ client.get(theurl, function (response) {
         }, 3000);
 
         setTimeout(function () {
-            chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send /dev/ttyUSB0  G91 G0 Y100");	
+            chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send /dev/ttyUSB0  G91 G0 Y100 A100");	
         }, 7000);
 
-        setTimeout(function () {
-            chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send /dev/ttyUSB0  G91 G0 A100");  
-
-        }, 9000);
+      
             setTimeout(function () {
             chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send /dev/ttyUSB1  G28.2 X0");	
             
@@ -1868,8 +1865,6 @@ client.get(theurl, function (response) {
 
             setTimeout(function () {
 
-                
-    
                 chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send /dev/ttyUSB0  G28.2 Y0");	
                 chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send /dev/ttyUSB0  G28.2 A0");	
                 chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send /dev/ttyUSB0  G28.2 X0");	
