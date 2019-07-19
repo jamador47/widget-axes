@@ -2038,6 +2038,9 @@ setTimeout(function(){
             // setup button events
             $('#com-chilipeppr-widget-xyz-ftr .jogx').click("X+", this.jogBtn.bind(this));
             $('#com-chilipeppr-widget-xyz-ftr .jogy').click("Y+", this.jogBtn.bind(this));
+            $('#com-chilipeppr-widget-xyz-ftr .joga').click("A+", this.jogBtn.bind(this));
+            $('#com-chilipeppr-widget-xyz-ftr .joganeg').click("A-", this.jogBtn.bind(this));
+
             $('#com-chilipeppr-widget-xyz-ftr .jogz').click("Z+", this.jogBtn.bind(this));
             $('#com-chilipeppr-widget-xyz-ftr .jogxneg').click("X-", this.jogBtn.bind(this));
             $('#com-chilipeppr-widget-xyz-ftr .jogyneg').click("Y-", this.jogBtn.bind(this));
@@ -3005,6 +3008,15 @@ setTimeout(function(){
                                 </button>
                             </div>
                         </td>
+
+                        <td>
+                                <div class="btn-group-vertical" style="margin-right:-0px;">
+                                    <button class="btn btn-default jogy">A <span class="glyphicon glyphicon-circle-arrow-up"></span>
+                                    </button>
+                                    <button class="btn btn-default jogyneg ">A <span class="glyphicon glyphicon-circle-arrow-down"></span>
+                                    </button>
+                                </div>
+                            </td>
                         
                         <td>
                             <button class="btn btn-default jogx dbltall">X
