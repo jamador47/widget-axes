@@ -439,6 +439,11 @@ cpdefine("inline:com-chilipeppr-widget-xyz", ["chilipeppr_ready", "jquerycookie"
 
             this.forkSetup();
             this.toolbarSetup();
+            
+            var el = $('#com-chilipeppr-widget-xyz-a');
+                this.isAAxisShowing = true;
+                el.removeClass('hidden');
+                $('#com-chilipeppr-widget-xyz .showhideaaxis').addClass("active");
 
             // Subscribe to the signal published from the specific controller implementing the generic interface
             // for CNC controllers that normalizes the XYZ Axis updates so we don't have to worry about
@@ -480,9 +485,7 @@ cpdefine("inline:com-chilipeppr-widget-xyz", ["chilipeppr_ready", "jquerycookie"
 
 
             // setup DOM elements for the Axes in the UI
-            this.isAAxisShowing = true;
             this.setupAxes();
-            
 
             // setup controller specific init items
             //this.initControllerSpecific();
@@ -2624,7 +2627,7 @@ setTimeout(function(){
                         </ul>
                     </div>
                 </div>
-            </div> <span class="panel-title" data-toggle="popover">Axes <span style="font-size:9px">v12.0</span></span>
+            </div> <span class="panel-title" data-toggle="popover">Axes <span style="font-size:9px">v15.0</span></span>
 
         </div>
         <div id="com-chilipeppr-widget-xyz-body" class="panel-body">
