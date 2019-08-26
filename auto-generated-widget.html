@@ -1739,7 +1739,7 @@ onM20BtnClick: function (evt) {
           
             setTimeout(function () {
                         this.onM10BtnClick();
-        }, 3000);
+        }, 4000);
 
         setTimeout(function () {
             chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "sendnobuf /dev/ttyUSB0  G91 G1 Y10 A10 F1000");	
@@ -1754,7 +1754,7 @@ onM20BtnClick: function (evt) {
 
             setTimeout(function () {
 
-                chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "sendnobuf /dev/ttyUSB0  G28.2 Y0 A0 X0");	
+                chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send /dev/ttyUSB0  G28.2 Y0 A0 X0");	
          
                 this.homePLC();
                 var HttpClient = function () {
