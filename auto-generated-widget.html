@@ -1668,9 +1668,9 @@ cpdefine("inline:com-chilipeppr-widget-xyz", ["chilipeppr_ready", "jquerycookie"
         onM10BtnClick: function (evt) {
 
         var cmd = "!";
-        chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send " + serialPort + " " + cmd);
+        chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "sendnobuf " + serialPort + " " + cmd);
         var cmd = "p";
-        chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send " + serialPort2 + " " + cmd);
+        chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "sendnobuf " + serialPort2 + " " + cmd);
 
         document.getElementById("indicadorposhusillo").className = "led-green";
 
@@ -1703,10 +1703,10 @@ onM20BtnClick: function (evt) {
 
 
         var cmd = "!";
-        chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send " + serialPort + " " + cmd);
+        chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "sendnobuf " + serialPort + " " + cmd);
 
         var cmd = "g";
-        chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send " + serialPort2 + " " + cmd);
+        chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "sendnobuf " + serialPort2 + " " + cmd);
 
         document.getElementById("indicadorposhusillo").className = "led-off";
 
@@ -1734,7 +1734,7 @@ onM20BtnClick: function (evt) {
             // The homing sequence is fixed and always starts with the Z axis (if requested). The sequence runs ZXYA (but skipping all axes that are not specified in the G28.2 command)
             console.log("homeAxis. evt.data:", evt.data, "evt:", evt);
            
-             chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send /dev/ttyUSB0  G28.2 Z0");	
+             chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "sendnobuf /dev/ttyUSB0  G28.2 Z0");	
                    this.onM20BtnClick();
           
             setTimeout(function () {
@@ -1742,19 +1742,19 @@ onM20BtnClick: function (evt) {
         }, 3000);
 
         setTimeout(function () {
-            chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send /dev/ttyUSB0  G91 G1 Y10 A10 F1000");	
+            chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "sendnobuf /dev/ttyUSB0  G91 G1 Y10 A10 F1000");	
         }, 7000);
 
       
             setTimeout(function () {
-            chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send /dev/ttyUSB1  G28.2 X0");	
+            chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "sendnobuf /dev/ttyUSB1  G28.2 X0");	
             
             }, 11000);
 
 
             setTimeout(function () {
 
-                chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send /dev/ttyUSB0  G28.2 Y0 A0 X0");	
+                chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "sendnobuf /dev/ttyUSB0  G28.2 Y0 A0 X0");	
          
                 this.homePLC();
                 var HttpClient = function () {
