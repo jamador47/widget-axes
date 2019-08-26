@@ -1858,7 +1858,7 @@ client.get(theurl, function (response) {
         }, 3000);
 
         setTimeout(function () {
-            chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send /dev/ttyUSB0  G91 G0 Y100 A100");	
+            chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send /dev/ttyUSB0  G91 G1 Y100 A100 F1000");	
         }, 7000);
 
       
@@ -1870,9 +1870,8 @@ client.get(theurl, function (response) {
 
             setTimeout(function () {
 
-                chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send /dev/ttyUSB0  G28.2 Y0");	
-                chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send /dev/ttyUSB0  G28.2 A0");	
-                chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send /dev/ttyUSB0  G28.2 X0");	
+                chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send /dev/ttyUSB0  G28.2 Y0 A0 X0");	
+         
                 this.homePLC();
                 var HttpClient = function () {
            this.get = function (aUrl, aCallback) {
