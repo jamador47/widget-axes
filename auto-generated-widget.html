@@ -1667,9 +1667,7 @@ cpdefine("inline:com-chilipeppr-widget-xyz", ["chilipeppr_ready", "jquerycookie"
         },
         onM10BtnClick: function (evt) {
 
-        var cmd = "!";
-        chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "sendnobuf " + serialPort + " " + cmd);
-        var cmd = "p";
+            var cmd = "p";
         chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "sendnobuf " + serialPort2 + " " + cmd);
 
         document.getElementById("indicadorposhusillo").className = "led-green";
@@ -1754,9 +1752,9 @@ onM20BtnClick: function (evt) {
 
             setTimeout(function () {
 
-                chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send /dev/ttyUSB0  G28.2 Y0 A0 X0");	
+                chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "sendnobuf /dev/ttyUSB0  G28.2 Y0 A0 X0");	
          
-                this.homePLC();
+                chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "sendnobuf /dev/ttyACM0  a");	
                 var HttpClient = function () {
            this.get = function (aUrl, aCallback) {
   var anHttpRequest = new XMLHttpRequest();
@@ -1834,7 +1832,7 @@ setTimeout(function(){
                 2000
             );
             
-            chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "send /dev/ttyACM0  a\n");			
+            chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "sendnobuf /dev/ttyACM0  a");			
         },
         isAAxisShowing: false,
         showHideAxisA: function () {
