@@ -1734,10 +1734,6 @@ onM20BtnClick: function (evt) {
            
              chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "sendnobuf /dev/ttyUSB0  G28.2 Z0");	
                    this.onM20BtnClick();
-          
-            setTimeout(function () {
-                        this.onM10BtnClick();
-        }, 4000);
 
         setTimeout(function () {
             chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "sendnobuf /dev/ttyUSB0  G91 G1 Y10 A10 F1000");	
