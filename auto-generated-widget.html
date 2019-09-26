@@ -238,8 +238,8 @@
     </style>
 
     <script type='text/javascript'>
-     const serialPort = "/dev/ttyUSB0";
-        const serialPort2 = "/dev/ttyACM0";
+     const serialPort = "COM3";
+        const serialPort2 = "COM4";
     //<![CDATA[
 /* global cprequire_test macro chilipeppr THREE $ requirejs cprequire cpdefine chilipeppr */
 // Test this element. This code is auto-removed by the chilipeppr.load()
@@ -1732,25 +1732,25 @@ onM20BtnClick: function (evt) {
             // The homing sequence is fixed and always starts with the Z axis (if requested). The sequence runs ZXYA (but skipping all axes that are not specified in the G28.2 command)
             console.log("homeAxis. evt.data:", evt.data, "evt:", evt);
            
-             chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "sendnobuf /dev/ttyUSB0  G28.2 Z0");	
+             chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "sendnobuf COM3  G28.2 Z0");	
                    this.onM20BtnClick();
 
         setTimeout(function () {
-            chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "sendnobuf /dev/ttyUSB0  G91 G1 Y10 A10 F1000");	
+            chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "sendnobuf COM3  G91 G1 Y10 A10 F1000");	
         }, 7000);
 
       
             setTimeout(function () {
-            chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "sendnobuf /dev/ttyUSB1  G28.2 X0");	
+            chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "sendnobuf COM5  G28.2 X0");	
             
             }, 11000);
 
 
             setTimeout(function () {
 
-                chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "sendnobuf /dev/ttyUSB0  G28.2 Y0 A0 X0");	
+                chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "sendnobuf COM3  G28.2 Y0 A0 X0");	
          
-                chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "sendnobuf /dev/ttyACM0  a");	
+                chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "sendnobuf COM4  a");	
                 var HttpClient = function () {
            this.get = function (aUrl, aCallback) {
   var anHttpRequest = new XMLHttpRequest();
@@ -1828,7 +1828,7 @@ setTimeout(function(){
                 2000
             );
             
-            chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "sendnobuf /dev/ttyACM0  a");			
+            chilipeppr.publish("/com-chilipeppr-widget-serialport/ws/send", "sendnobuf COM4  a");			
         },
         isAAxisShowing: false,
         showHideAxisA: function () {
@@ -2733,7 +2733,7 @@ setTimeout(function(){
                         <div class="well com-chilipeppr-xyz-well com-chilipeppr-xyz-pos-well" data-axis="a">
                             <h2 class="com-chilipeppr-xyz-pos"><table><tr><td style="width:70px;text-align:right;"><span class="xyz-negpos xyz-dimmed" >-</span><span class="xyz-intgray xyz-dimmed">00</span><span class="xyz-intblack">0</span></td><td>.<span class="xyz-decimal">000</span></td></tr></table></h2>
 
-                            <div class="com-chilipeppr-xyz-dim">&deg;</div>
+                            <         <div class="com-chilipeppr-xyz-dim">mm</div>
                         </div>
                     </div>
                 </div>
